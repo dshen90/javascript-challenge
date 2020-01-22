@@ -12,3 +12,9 @@ data.forEach((tableData) => {
     cell.text(value);
   });
 });
+
+var filter = d3.select("#filter-btn").on("click", function(){
+    tableData.forEach(data =>data.datetime.filter()
+    person.bloodType === inputValue)
+})
+    
