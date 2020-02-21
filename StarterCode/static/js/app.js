@@ -17,4 +17,30 @@ var filter = d3.select("#filter-btn").on("click", function(){
     tableData.forEach(data =>data.datetime.filter()
     person.bloodType === inputValue)
 })
-    
+
+// RESET BUTTON 
+var resetBtn = d3.select("#reset-btn");
+resetBtn.on("click", function() {
+    clearRecords();
+    allRecords();
+});
+
+// Initiate site with all records showing
+function allRecords(){
+    data.forEach((ufoRecord) => {
+        let row = tbody.append("tr");
+        Object.entries(ufoRecord).forEach(([key, value]) => {
+            let cell = row.append("td");
+            cell.text(value);
+        })
+    })
+};
+
+// Clear all records
+function clearRecords(){
+    let notFound = d3.select("#not-found").remove();
+    let rows = tbody.selectAll("tr").remove();
+}
+
+// init
+allRecords()
